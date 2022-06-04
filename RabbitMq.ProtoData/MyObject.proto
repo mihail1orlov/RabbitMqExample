@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+option csharp_namespace = "RabbitMq.ProtoData.Models";
+import "google/protobuf/timestamp.proto";
+
+message ObjectResult {
+	string Id = 1;
+	repeated MyObject result = 2;
+}
+
+message MyObject {
+	google.protobuf.Timestamp creationTime = 1;
+	double value = 2;
+}

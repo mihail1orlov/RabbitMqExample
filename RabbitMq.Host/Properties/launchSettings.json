@@ -1,11 +1,16 @@
-﻿{
+{
   "profiles": {
     "RabbitMq.Host": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
-      }
+        "DOTNET_ENVIRONMENT": "Development",
+        "RABBITMQ_CONNECTION_STRING": "amqp://user:user1234@192.168.1.203:5672",
+        "RABBITMQ_EXCHANGE": "MyExchange",
+        "RABBITMQ_EXCHANGE_TYPE": "Topic",
+        "RABBITMQ_ROUTING_KEY": "MyRoutingKey",
+        "RABBITMQ_DURABLE": "true"
+      },
+      "dotnetRunMessages": true
     }
   }
 }

@@ -14,9 +14,10 @@ public static class BootstrapperExtension
         services.RegisterMessageGenerator(configuration);
 
         services.AddSingleton<IRabbitMqProducer, RabbitMqProducer>();
+        services.AddSingleton<IProducerConfiguration, ProducerConfiguration>();
         services.AddSingleton<IConnectionFactory>(_ => new ConnectionFactory
         {
-            Uri = new Uri(configuration.GetEnvVar(EnvironmentVariables.RABBITMQ_CONNECTION_STRING)),
+            Uri = new Uri(EnvVarReader.GetVariable(EnvironmentVariables.RABBITMQ_CONNECTION_STRING)),
             AutomaticRecoveryEnabled = true,
             NetworkRecoveryInterval = TimeSpan.FromSeconds(5),
         });

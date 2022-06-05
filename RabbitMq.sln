@@ -5,6 +5,7 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{B01F8A47-C7C8-4088-B527-323701D38231}"
 	ProjectSection(SolutionItems) = preProject
+		SolutionItems\Dockerfile = SolutionItems\Dockerfile
 		SolutionItems\ReadMe.txt = SolutionItems\ReadMe.txt
 	EndProjectSection
 EndProject
@@ -20,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMq.Host", "RabbitMq.H
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMq.Api", "RabbitMq.Api\RabbitMq.Api.csproj", "{551E34B2-B747-4265-96C2-FCEE71CAE1A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq.Common", "RabbitMq.Common\RabbitMq.Common.csproj", "{387CFE4A-97FC-47DF-AE62-ECCD4D3CF9CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMq.Common", "RabbitMq.Common\RabbitMq.Common.csproj", "{387CFE4A-97FC-47DF-AE62-ECCD4D3CF9CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

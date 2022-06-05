@@ -21,4 +21,9 @@ internal class ProducerConfiguration : IProducerConfiguration
     public string ExchangeType { get; }
 
     public bool Durable { get; }
+
+    public override string ToString()
+    {
+        return $"{nameof(Ttl)}: {Ttl},\n{nameof(ExchangeName)}: {ExchangeName},\n{nameof(RoutingKey)}: {RoutingKey},\n{nameof(ExchangeType)}: {ExchangeType},\n{nameof(Durable)}: {Durable}";
+    }
 }

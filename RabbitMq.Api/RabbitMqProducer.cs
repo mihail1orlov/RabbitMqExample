@@ -1,4 +1,5 @@
-﻿using RabbitMq.Client;
+﻿using Microsoft.Extensions.Logging;
+using RabbitMq.Client;
 using RabbitMq.MessageGenerator;
 using RabbitMQ.Client;
 
@@ -6,17 +7,21 @@ namespace RabbitMq.Api
 {
     internal class RabbitMqProducer : IRabbitMqProducer
     {
+        private readonly ILogger<RabbitMqProducer> _logger;
         private readonly IMessageGenerator _messageGenerator;
         private readonly IConnectionFactory _connectionFactory;
         private readonly IProducerConfiguration _configuration;
 
-        public RabbitMqProducer(IMessageGenerator messageGenerator,
+        public RabbitMqProducer(ILogger<RabbitMqProducer> logger,
+            IMessageGenerator messageGenerator,
             IConnectionFactory connectionFactory,
             IProducerConfiguration configuration)
         {
+            _logger = logger;
             _messageGenerator = messageGenerator;
             _connectionFactory = connectionFactory;
             _configuration = configuration;
+            _logger.LogInformation(_configuration.ToString());
         }
 
         public Task SendRandomMessage()

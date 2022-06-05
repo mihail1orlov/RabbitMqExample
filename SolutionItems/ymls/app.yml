@@ -1,0 +1,14 @@
+version: '2.9'
+
+services:
+   rabbit_mq_example:
+        image: rabbit_mq_example:latest
+        container_name: rabbit_mq_example_c
+        
+        environment:
+            - RABBITMQ_CONNECTION_STRING=amqp://user:user1234@192.168.1.203:5672
+            - RABBITMQ_EXCHANGE=MyExchange
+            - RABBITMQ_EXCHANGE_TYPE=Topic
+            - RABBITMQ_ROUTING_KEY=MyRoutingKey
+            - RABBITMQ_DURABLE=true
+...
